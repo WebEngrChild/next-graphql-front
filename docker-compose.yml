@@ -11,7 +11,7 @@ services:
       - ".docker/nginx/cert/localhost.pem:/etc/certs/localhost.pem"
       - ".docker/nginx/cert/localhost-key.pem:/etc/certs/localhost-key.pem"
     networks:
-      my_network:
+      sample_graph_network:
         ipv4_address: 172.30.0.11
 
   front:
@@ -29,9 +29,9 @@ services:
     ports:
     - "3000:3000"
     networks:
-      my_network:
+      sample_graph_network:
         ipv4_address: 172.30.0.10
 
 networks:
-  my_network:
+  sample_graph_network:
     external: true
