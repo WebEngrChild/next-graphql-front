@@ -1,0 +1,39 @@
+name: next-front-app
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+defaults:
+  run:
+    working-directory: ./
+env:
+# CIで利用するファイルを指定
+  DOCKER_COMPOSE_FILE: docker-compose.ci.yml
+jobs:
+  Linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: List files
+        run: |
+          ls -la
+      - name: Docker Set Up
+        run: |
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} build front
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d front
+      - name: Container Status
+        run: |
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} ps
+      - name: Install
+        run: |
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} exec -T front yarn
+      - name: Run TEST
+        run: |
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} exec -T front yarn jest
+      - name: Run CI
+        run: |
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} exec -T front yarn prettier
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} exec -T front yarn lint

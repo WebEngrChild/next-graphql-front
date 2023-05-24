@@ -1,0 +1,4 @@
+# Enable Content trust for Docker
+CIS-DI-0005
+# Add HEALTHCHECK instruction to the container image
+CIS-DI-0006

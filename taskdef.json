@@ -1,0 +1,124 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:00000000000:task-definition/front-dev-task-definition:1",
+    "containerDefinitions": [
+        {
+            "name": "front-container",
+            "image": "<IMAGE1_NAME>",
+            "cpu": 0,
+            "memoryReservation": 128,
+            "links": [],
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "linuxParameters": {
+                "devices": [],
+                "initProcessEnabled": true,
+                "tmpfs": []
+            },
+            "secrets": [
+                {
+                    "name": "NEXT_PUBLIC_API_URL",
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:00000000000:parameter/NEXT_PUBLIC_API_URL"
+                }
+            ],
+            "readonlyRootFilesystem": false,
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "front-dev-cluster-log",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "front"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "front-dev-task-definition",
+    "executionRoleArn": "arn:aws:iam::00000000000:role/front-dev-task-execution-role",
+    "networkMode": "awsvpc",
+    "revision": 7,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.22"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "ecs.capability.secrets.ssm.environment-variables"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "registeredAt": "2023-05-02T10:45:49.718Z",
+    "registeredBy": "arn:aws:iam::00000000000:user/admin-user",
+    "tags": [
+        {
+            "key": "Environment",
+            "value": "dev"
+        },
+        {
+            "key": "SystemName",
+            "value": "front"
+        },
+        {
+            "key": "Name",
+            "value": "front-dev-task-definition"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+.button-common {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+
+  &:active {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }  
+}
+
+
+@mixin button-main {
+    background: #1D9BF0;/*ボタン色*/
+    color: #FFF;
+
+    @extend .button-common;
+  }
+
+@mixin button-secondary {
+  background: #757575;/*ボタン色*/
+  color: #FFF;
+
+  @extend .button-common;
+}
+
+@mixin button-tertiary {
+  background-color: #1D9BF0;
+  color: #fff;
+  border: 1px solid #fff;
+
+  @extend .button-common;
+}
+
+@mixin common-error {
+  color:#FF0000;
+  height: 30px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+
+  span {
+      font-size: 10px;
+  }
+}

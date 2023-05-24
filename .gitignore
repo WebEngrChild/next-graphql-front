@@ -1,0 +1,5 @@
+.idea
+.docker/nginx/cert
+.env
+.env.local
+src/.yarn/unplugged/@next-swc-linux*/

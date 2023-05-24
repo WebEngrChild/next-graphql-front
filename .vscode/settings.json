@@ -1,0 +1,9 @@
+{
+  "search.exclude": {
+    "./src/**/.yarn": true,
+    "./src/**/.pnp.*": true
+  },
+  "eslint.nodePath": "./src/.yarn/sdks",
+  "typescript.tsdk": "./src/.yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

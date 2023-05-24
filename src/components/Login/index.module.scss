@@ -1,0 +1,41 @@
+@import "../../styles/common.scss";
+
+.loginForm {
+    margin-top: 150px;
+}
+
+.error {
+    @include common-error
+}
+
+.align-items {
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 中央寄せする場合 */
+}
+
+.formWrapper {
+    &:first-child {
+        color:  #757575;
+      }
+
+    @extend .align-items
+}
+
+.inputWrapper {
+    @extend .align-items;
+    
+    input {
+      color: #757575;
+      margin-bottom: 15px;
+      border: none;
+      border-bottom: 0.5px solid #c0c0c0;
+      width: 250px;
+    }
+  }
+
+.submitBtn {
+    margin-top: 15px;
+    width: 250px;
+    @include button-main
+}

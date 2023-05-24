@@ -1,0 +1,44 @@
+@import "../../styles/common.scss";
+
+.error {
+    @include common-error;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.btnPost {
+    @include button-main
+}
+
+.btnCancel {
+    @include button-secondary
+}
+
+.textareaWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.textarea {
+    width: 500px;
+    height: 300px;
+    color: #757575;
+    border: 0.5px solid #E0E0E0;
+  }
+
+.inputWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 80px;
+}

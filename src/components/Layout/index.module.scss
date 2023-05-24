@@ -1,0 +1,26 @@
+@import "../../styles/common.scss";
+
+.header {
+    position: fixed; // ナビゲーションバーを固定
+    top: 0; // 画面上部に配置
+    left: 0; // 画面左端に配置
+    width: 100%; // 画面幅いっぱいに広がる
+    z-index: 100; // 他の要素の上に表示されるようにする
+}
+  
+.nav {
+    background: #1D9BF0; // ナビゲーションバーの背景色
+    display: flex; // ナビゲーション要素を水平に並べる
+    justify-content: flex-start; // ナビゲーション要素を右側に寄せる
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.btnCreate {
+    @include button-main
+  }
+  
+.btnLogOut {
+    @include button-tertiary
+}

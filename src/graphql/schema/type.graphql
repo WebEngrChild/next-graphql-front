@@ -1,0 +1,13 @@
+type Message {
+  id: ID!
+  text: String!
+  user: User!
+  created_at: String!
+  updated_at: String!
+}
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+}
