@@ -24,5 +24,5 @@ $ trivy image --severity CRITICAL --ignore-unfixed front-dev-repo
 
 ```
 $ brew install hadolint
-$ hadolint .docker/front/Dockerfile
+$ hadolint --ignore DL3018 .docker/front/Dockerfile
 ```
